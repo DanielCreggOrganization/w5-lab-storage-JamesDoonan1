@@ -1,20 +1,27 @@
-<ion-header [translucent]="true">
+<!-- src/app/home/home.page.html -->
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Storage Demo</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Key</ion-label>
+    <ion-input [(ngModel)]="key"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Value</ion-label>
+    <ion-input [(ngModel)]="value"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="setItem()">Set Item</ion-button>
+  <ion-button expand="full" (click)="getItem()">Get Item</ion-button>
+  <ion-button expand="full" (click)="removeItem()">Remove Item</ion-button>
+  <ion-button expand="full" (click)="clearStorage()">Clear Storage</ion-button>
+  <ion-button expand="full" (click)="getKeys()">Get Keys</ion-button>
+  <ion-button expand="full" (click)="getLength()">Get Length</ion-button>
+  <ion-button expand="full" (click)="enumerateItems()">Enumerate Items</ion-button>
+  <ion-textarea readonly>{{ output }}</ion-textarea>
+  <ion-button expand="full" routerLink="/movies">Go to Movies Page</ion-button> <!-- Navigation Button -->
+  <p>{{ output }}</p>
 </ion-content>
